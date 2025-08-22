@@ -1,0 +1,41 @@
+Título de la Prueba: Planificador de Órdenes de Producción
+
+Duración: 2 Horas
+Lenguajes permitidos: Python o JavaScript
+
+
+Contexto del Problema
+
+En nuestra planta industrial, la producción se organiza en "órdenes de trabajo" 
+para fabricar diferentes componentes en una misma máquina. El proceso es secuencial y, 
+a menudo, algunas órdenes no pueden comenzar hasta que otras se hayan completado. 
+Por ejemplo, no podemos ensamblar un motor (orden B) si primero no hemos fabricado su carcasa (orden A).
+
+Como un ingeniero de software debes crear un sistema lógico para determinar 
+una secuencia de producción válida que respete todas estas dependencias.
+
+Escribe una función llamada planificarProduccion(ordenes) que reciba una lista de órdenes de 
+producción y devuelva un array con los id de las órdenes en una secuencia de ejecución válida.
+
+
+Requisitos de la Solución
+
+1.  La función debe aceptar un array de objetos como único argumento.
+2.  La función debe devolver un array de strings, donde cada string es el id de una orden.
+3.  El array devuelto debe respetar todas las dependencias. Una orden no puede aparecer 
+    en la lista antes que su dependencia.
+4.  Si no existe una secuencia de producción válida debido a una dependencia circular, 
+    la función debe lanzar un Error con un mensaje claro.
+5.  El orden entre tareas que no tienen dependencias directas o indirectas entre sí no es estricto.
+
+
+Formato de Entrada
+
+La entrada será un array de objetos. Cada objeto representa una orden y tiene la siguiente estructura:
+
+{
+  id: "string",                     // Identificador único de la orden.
+  duracion: number,                 // Tiempo estimado en minutos
+  dependencia: "string" | null      // El 'id' de la orden que debe completarse antes. Si es 'null', no tiene dependencias.
+}
+
