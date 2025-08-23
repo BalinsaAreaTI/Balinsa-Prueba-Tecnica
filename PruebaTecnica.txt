@@ -10,11 +10,9 @@ En nuestra planta industrial, la producción se organiza en "órdenes de trabajo
 para fabricar diferentes componentes en una misma máquina. El proceso es secuencial y, 
 a menudo, algunas órdenes no pueden comenzar hasta que otras se hayan completado. 
 Por ejemplo, no podemos ensamblar un motor (orden B) si primero no hemos fabricado su carcasa (orden A).
-
 Como un ingeniero de software debes crear un sistema lógico para determinar 
 una secuencia de producción válida que respete todas estas dependencias.
-
-Escribe una función llamada planificarProduccion(ordenes) que reciba una lista de órdenes de 
+Escribe una función llamada planificarProduccion que reciba una lista de órdenes de 
 producción y devuelva un array con los id de las órdenes en una secuencia de ejecución válida.
 
 
@@ -38,4 +36,8 @@ La entrada será un array de objetos. Cada objeto representa una orden y tiene l
   duracion: number,                 // Tiempo estimado en minutos
   dependencia: "string" | null      // El 'id' de la orden que debe completarse antes. Si es 'null', no tiene dependencias.
 }
+
+
+Nota: Si resuelves el reto en JavaScript, asegúrate de exportar tu función al final del archivo usando 
+        module.exports = { planificarProduccion };
 
